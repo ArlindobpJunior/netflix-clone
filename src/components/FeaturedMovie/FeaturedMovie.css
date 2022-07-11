@@ -86,3 +86,37 @@
   font-size: 0.8rem;
   color: #fff;
 }
+
+@media screen and (max-width: 900px) {
+  .featured {
+    height: 90vh;
+  }
+  .featured--name {
+    font-size: 3rem;
+  }
+  .featured--description {
+    max-width: 100%;
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .featured {
+    height: 90vh;
+  }
+  .featured--name {
+    font-size: 2rem;
+  }
+  .featured--info {
+    font-size: 0.8rem;
+  }
+  .featured--description {
+    max-width: 100%;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+  }
+  .featured--watchbutton,
+  .featured--mylistbutton {
+    font-size: 1rem;
+  }
+}

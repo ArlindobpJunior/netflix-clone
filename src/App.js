@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 const App = () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -28,9 +29,23 @@ const App = () => {
     loadAll();
   }, []);
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    };
+    window.addEventListener("scroll", scrollListener);
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, []);
+
   return (
     <div className="page">
-      <Header />
+      <Header black={blackHeader} />
 
       {featuredData && <FeaturedMovie item={featuredData} />}
 
@@ -39,6 +54,11 @@ const App = () => {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
+
+      <footer>
+        Copyrigt &copy; 2022 Arlindo Jr. <br />
+        Direito de imagem para Netflix. Dados pegos do site Themoviedb.org
+      </footer>
     </div>
   );
 };

@@ -16,7 +16,7 @@ const App = () => {
       let list = await Tmdb.getHomeList();
       setMovieList(list);
 
-      //Pegando featured
+      //Pegando featured. Filme principal da capa.
       let originals = list.filter((i) => i.slug === "originals");
       let randomChosen = Math.floor(
         Math.random() * (originals[0].items.results.length - 1)

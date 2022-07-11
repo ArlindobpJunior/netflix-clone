@@ -81,6 +81,8 @@ export default {
       },
     ];
   },
+
+  // Pega as informações do filme que aparece na capa. Nota, ano, número de episódios e descrição.
   getMovieInfo: async (movieId, type) => {
     let info = {};
 

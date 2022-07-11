@@ -5,6 +5,7 @@ import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 const MovieRow = ({ title, items }) => {
   const [scrollX, setScrollX] = useState(0);
 
+  //Rola as listas de filmes para a esquerda
   const handleLeftArrow = () => {
     let x = scrollX + Math.round(window.innerWidth / 2);
     if (x > 0) {
@@ -13,6 +14,7 @@ const MovieRow = ({ title, items }) => {
     setScrollX(x);
   };
 
+  //Rola as listas de filmes para a direita
   const handleRightArrow = () => {
     let x = scrollX - Math.round(window.innerWidth / 2);
     let listW = items.results.length * 150;
